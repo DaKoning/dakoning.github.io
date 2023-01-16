@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: blanchedalmond;
+}
+.bar {
+    background-color: lightslategrey;
+    overflow: hidden;
+}
+
+.bar a {
+    float: left;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: larger;
+    padding: 14px 14px;
+}
+
+.bar a:hover {
+    background-color: cornflowerblue;
+}

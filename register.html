@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="bar">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="shoppingcart.html">Shopping Cart</a>
+        <a href="signin.html">Sign In</a>
+    </div> 
+
+    <div class="outline">
+        <div class="imagecontainer">
+            <img src="images/signin.png" alt="Sign In Image" class="image">
+        </div>
+        <div class="signincontainer">
+            <h1>Register</h1>
+            <label for="uname">Username</label>
+            <input type="text" name="uname" placeholder="Enter Username" required>
+
+            <label for="psw">Password</label>
+            <input type="password" name="psw" placeholder="Enter Password" required>
+
+            <div class="grid">
+                <label for="fname">First Name</label>
+                <label for="lname">Last Name</label>
+                <input type="text" name="fname" placeholder="John" required>
+                <input type="text" name="lname" placeholder="Doe" required>
+            </div>
+            <div class="grid grid2">
+                <label for="fname">Street</label>
+                <label for="lname">House no.</label>
+                <input type="text" name="street" placeholder="Street" required>
+                <input class="houseno" type="number" name="number" placeholder="10" required>
+            </div>
+            <div class="grid grid3">
+                <label for="zipcode">Zip Code</label>
+                <label for="country">Country</label>
+                <input type="text" name="zipcode" placeholder="123456" required>
+                <select name="country" >
+                    <option value="germany">Germany</option>
+                    <option value="netherlands">Netherlands</option>
+                    <option value="poland">Poland</option>
+                    <option value="romania">Romania</option>
+                    <option value="us">United States</option>
+                </select>
+            </div>
+            <label for="eamil">Email</label>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <div class="grid">
+                <label for="sex">Sex</label>
+                <label for="Language">Language</label>
+                <select name="sexes">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="else">Different/Prefer not to say</option>
+                </select>
+                <select name="language">
+                    <option value="dutch">Dutch</option>
+                    <option value="english">English</option>
+                </select>
+            </div>
+            <label for="bio">About / Bio</label>
+            <Textarea name="bio" placeholder="Write something about yourself..."></Textarea>
+
+            <a class="buttoncontainer" href="profile.html">
+                <button type="button"><b>Register</b></button>
+            </a>
+    </div>
+</body>
+</html>
