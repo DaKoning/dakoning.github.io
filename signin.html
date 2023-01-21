@@ -20,21 +20,22 @@
         <div class="imagecontainer">
             <img src="images/signin.png" alt="Sign In Image" class="image">
         </div>
-        <div class="signincontainer">
+        <form class="signincontainer" action="/profile.html" onsubmit="return formValidation()" method="post">
             <h1>Sign In</h1>
             <label for="email">Email</label>
-            <input type="text" name="email" placeholder="Enter Email" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
 
             <label for="psw">Password</label>
             <input type="password" name="psw" placeholder="Enter Password" required>
 
-            <a class="buttoncontainer" href="profile.html">
-                <button type="button"><b>Sign In</b></button>
-            </a>
+            <button type="submit"><b>Sign In</b></button>
+
             <hr class="divider">
             <a class="buttoncontainer" href="register.html">
                 <button type="button" class="registerbutton"><b>Register</b></button>
             </a>
-    </div>
+        </form>
 </body>
+
+<script src="signin.js"></script>
 </html>

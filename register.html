@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<script src="register.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +23,7 @@
         <div class="imagecontainer">
             <img src="images/signin.png" alt="Sign In Image" class="image">
         </div>
-        <div class="signincontainer">
+        <form name="registerform" class="signincontainer" action="/profile.html" onsubmit="return checkForm()">
             <h1>Register</h1>
             <label for="uname">Username</label>
             <input type="text" name="uname" placeholder="Enter Username" required>
@@ -52,7 +55,7 @@
                     <option value="us">United States</option>
                 </select>
             </div>
-            <label for="eamil">Email</label>
+            <label for="email">Email</label>
             <input type="email" name="email" placeholder="Enter Email" required>
             <div class="grid">
                 <label for="sex">Sex</label>
@@ -70,9 +73,7 @@
             <label for="bio">About / Bio</label>
             <Textarea name="bio" placeholder="Write something about yourself..."></Textarea>
 
-            <a class="buttoncontainer" href="profile.html">
-                <button type="button"><b>Register</b></button>
-            </a>
-    </div>
+            <button type="submit"><b>Register</b></button>
+            </form>
 </body>
 </html>
