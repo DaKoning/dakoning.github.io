@@ -1,12 +1,11 @@
 .outline {
-    /* border: 3px solid slategray; */
-    padding: 5%;
+    padding: 2%;
     margin: 1%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .imagecontainer {
@@ -14,9 +13,12 @@
     flex: 0 1 30%;
     text-align: center;
     margin: 3%;
+    margin-top: 10%;
 }
 
 .signincontainer {
+    flex-grow: 1;
+    flex-wrap: wrap;
     min-width: 0px;
     margin: 3%;
 }
@@ -29,16 +31,26 @@ img.image {
 input[type=text], input[type=email], input[type=number], input[type=password], select, textarea {
     width: 100%;
     padding: 20px 20px;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 30px 0;
     font-size: large;
     display: inline-block;
     border: 2px solid grey;
+    background: white;
     box-sizing: border-box;
 }
 
-
 label {
     font-size: x-large;
+    display: inline-block;
+}
+
+.error {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: -20px;
+    float: left;
+    color: red;
+    display: none;
 }
 
 .buttoncontainer {
@@ -87,4 +99,4 @@ hr.divider {
     column-gap: 10px;
 }
 .grid2 { grid-template-columns: auto 16%; }
-.grid3, grid4 { grid-template-columns: 20% auto; }
+.grid3, .grid4 { grid-template-columns: 20% auto; }

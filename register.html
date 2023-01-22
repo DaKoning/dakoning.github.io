@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<script src="register.js"></script>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,46 +23,58 @@
         <form name="registerform" class="signincontainer" action="/profile.html" onsubmit="return checkForm()">
             <h1>Register</h1>
             <label for="uname">Username</label>
-            <input type="text" name="uname" placeholder="Enter Username" required>
-
+            <input type="text" name="uname" id="uname" placeholder="Enter Username" required>
+            <p class="error" id="unameError">error</p>
+            
             <label for="psw">Password</label>
-            <input type="password" name="psw" placeholder="Enter Password" required>
+            <input type="password" name="psw" id="psw" placeholder="Enter Password" required>
+            <div><p class="error" id="passwordError">error</p></div>
 
             <div class="grid">
                 <label for="fname">First Name</label>
                 <label for="lname">Last Name</label>
-                <input type="text" name="fname" placeholder="John" required>
-                <input type="text" name="lname" placeholder="Doe" required>
+                <input type="text" name="fname" id="fname" placeholder="John" required>
+                <input type="text" name="lname" id="lname" placeholder="Doe" required>
+                <p class="error" id="fnameError">error</p>
+                <p class="error" id="lnameError">error</p>
             </div>
             <div class="grid grid2">
                 <label for="fname">Street</label>
                 <label for="lname">House no.</label>
-                <input type="text" name="street" placeholder="Street" required>
-                <input class="houseno" type="number" name="number" placeholder="10" required>
+                <input type="text" name="street" placeholder="Street">
+                <input class="houseno" type="number" name="number" placeholder="10">
+
             </div>
             <div class="grid grid3">
                 <label for="zipcode">Zip Code</label>
                 <label for="country">Country</label>
-                <input type="text" name="zipcode" placeholder="123456" required>
-                <select name="country" >
+                <input type="text" name="zipcode" id="zipcode" placeholder="123456">
+                <select name="country" required>
+                    <option disabled selected>-- select an option --</option>
                     <option value="germany">Germany</option>
                     <option value="netherlands">Netherlands</option>
                     <option value="poland">Poland</option>
                     <option value="romania">Romania</option>
                     <option value="us">United States</option>
                 </select>
+                <p class="error" id="zipcodeError">error</p>
             </div>
+            
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Enter Email" required>
+            <input type="email" name="email" id="email" placeholder="Enter Email" required>
+            <p class="error" id="emailError">error</p>
+
             <div class="grid">
                 <label for="sex">Sex</label>
                 <label for="Language">Language</label>
-                <select name="sexes">
+                <select name="sexes" required>
+                    <option disabled selected> -- select an option --</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="else">Different/Prefer not to say</option>
                 </select>
-                <select name="language">
+                <select name="language" required>
+                    <option disabled selected> -- select an option --</option>
                     <option value="dutch">Dutch</option>
                     <option value="english">English</option>
                 </select>
@@ -76,4 +85,7 @@
             <button type="submit"><b>Register</b></button>
             </form>
 </body>
+
+<script src="register.js"></script>
+
 </html>
