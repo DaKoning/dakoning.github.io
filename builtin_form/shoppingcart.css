@@ -1,0 +1,46 @@
+.Cart {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template: 1fr / 1fr 2fr 1fr 1fr;
+}
+
+.Check-out{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+b {
+    text-align: left;
+    font-size: larger;
+    align-items: center;
+}
+
+.buttoncontainer {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button {
+    font-size: larger;
+    background-color: goldenrod;
+    color: white;
+    padding: 14px 100px;
+    margin: 10px 0;
+    border: 0px;
+    cursor: pointer;
+    width: 100%;       
+}
+
+button:hover {
+    transform: scale(110%);
+    transition: all 200ms ease-in-out 0s;
+}
