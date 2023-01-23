@@ -31,6 +31,17 @@
                     '\nLanguage: ' + language.value +
                     '\nAbout / Bio: ' + bio.value
                 )" autocomplete>
+        <form name="registerform" class="signincontainer" onsubmit="alert(
+                    'Username: ' + uname.value +
+                    '\nPassword: ' + psw.value +
+                    '\nName: ' + fname.value + ' ' + lname.value +
+                    '\nAddress 1: ' + street.value + ' ' + number.value +
+                    '\nAddress 2: ' + zipcode.value + ', ' + country.value +
+                    '\nEmail: ' + email.value +
+                    '\nSex: ' + sex.value +
+                    '\nLanguage: ' + language.value +
+                    '\nAbout / Bio: ' + bio.value
+                )" autocomplete>
             <h1>Register</h1>
             <label for="uname">Username</label>
             <input type="text" name="uname" id="uname" placeholder="Enter Username" required minlength="5" maxlength="12">
@@ -64,6 +75,8 @@
             <div class="grid grid2">
                 <label for="fname">Street</label>
                 <label for="lname">House no.</label>
+                <input class="firstInGrid" type="text" name="street" id="street" placeholder="Street">
+                <input class="secondInGrid" class="houseno" type="number" name="number" id="number" placeholder="10">
                 <input class="firstInGrid" type="text" name="street" id="street" placeholder="Street">
                 <input class="secondInGrid" class="houseno" type="number" name="number" id="number" placeholder="10">
             </div>
@@ -102,15 +115,27 @@
                 <label for="Language">Language</label>
                 <select class="firstInGrid" name="sexes" id="sex" required>
                     <option disabled selected value="">-- select an option --</option>
+                <select class="firstInGrid" name="sexes" id="sex" required>
+                    <option disabled selected value="">-- select an option --</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other/Prefer not to say</option>
                 </select>
                 <select class="secondInGrid" name="language" id="language" required>
                     <option disabled selected value="">-- select an option --</option>
+                <select class="secondInGrid" name="language" id="language" required>
+                    <option disabled selected value="">-- select an option --</option>
                     <option value="Dutch">Dutch</option>
                     <option value="English">English</option>
                 </select>
+                <div>
+                    <p class="error" id="sexError">Sex is required.</p>
+                    <p class="noerror">Looks good!</p>
+                </div>
+                <div>
+                    <p class="error" id="languageError">Language is required.</p>
+                    <p class="noerror">Looks good!</p>
+                </div>
                 <div>
                     <p class="error" id="sexError">Sex is required.</p>
                     <p class="noerror">Looks good!</p>
