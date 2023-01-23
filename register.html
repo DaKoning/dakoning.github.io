@@ -20,68 +20,105 @@
         <div class="imagecontainer">
             <img src="images/signin.png" alt="Sign In Image" class="image">
         </div>
-        <form name="registerform" class="signincontainer" onsubmit="return checkForm()">
+        <form name="registerform" class="signincontainer" onsubmit="alert(
+                    'Username: ' + uname.value +
+                    '\nPassword: ' + psw.value +
+                    '\nName: ' + fname.value + ' ' + lname.value +
+                    '\nAddress 1: ' + street.value + ' ' + number.value +
+                    '\nAddress 2: ' + zipcode.value + ', ' + country.value +
+                    '\nEmail: ' + email.value +
+                    '\nSex: ' + sex.value +
+                    '\nLanguage: ' + language.value +
+                    '\nAbout / Bio: ' + bio.value
+                )" autocomplete>
             <h1>Register</h1>
             <label for="uname">Username</label>
-            <input type="text" name="uname" id="uname" placeholder="Enter Username">
-            <div><p class="error" id="unameError">error</p></div>
+            <input type="text" name="uname" id="uname" placeholder="Enter Username" required minlength="5" maxlength="12">
+            <div>
+                <p class="error" id="unameError">Username is required and must be of length 5 to 12.</p>
+                <p class="noerror">Looks good!</p>
+            </div>
             
             <label for="psw">Password</label>
-            <input type="password" name="psw" id="psw" placeholder="Enter Password">
-            <div><p class="error" id="passwordError">error</p></div>
+            <input type="password" name="psw" id="psw" placeholder="Enter Password" required minlength="12">
+            <div>
+                <p class="error" id="passwordError">Password is required and must be at least 12 characters long.</p>
+                <p class="noerror">Looks good!</p>
+            </div>
 
             <div class="grid">
                 <label for="fname">First Name</label>
                 <label for="lname">Last Name</label>
-                <input type="text" name="fname" id="fname" placeholder="John">
-                <input type="text" name="lname" id="lname" placeholder="Doe">
-                <div><p class="error" id="fnameError">error</p></div>
-                <div><p class="error" id="lnameError">error</p></div>
+                <input class="firstInGrid" type="text" name="fname" id="fname" placeholder="John" required>
+                <input class="secondInGrid" type="text" name="lname" id="lname" placeholder="Doe" required>
+                <div>
+                    <p class="error" id="fnameError">First name is required.</p>
+                    <p class="noerror">Looks good!</p>
+                </div>
+                <div>
+                    <p class="error" id="lnameError">Last name is required.</p>
+                    <p class="noerror">Looks good!</p>
+                    </p>
+                </div>
             </div>
             <div class="grid grid2">
                 <label for="fname">Street</label>
                 <label for="lname">House no.</label>
-                <input type="text" name="street" id="street" placeholder="Street">
-                <input class="houseno" type="text" name="number" id="number" placeholder="10">
-                <div><p class="error" id="streetError">error</p></div>
-                <div><p class="error" id="numberError">error</p></div>
+                <input class="firstInGrid" type="text" name="street" id="street" placeholder="Street">
+                <input class="secondInGrid" class="houseno" type="number" name="number" id="number" placeholder="10">
             </div>
             <div class="grid grid3">
                 <label for="zipcode">Zip Code</label>
                 <label for="country">Country</label>
-                <input type="text" name="zipcode" id="zipcode" placeholder="123456">
-                <select name="country" id="country">
-                    <option disabled selected value="none">-- select an option --</option>
+                <input class="firstInGrid" type="text" name="zipcode" id="zipcode" placeholder="123456" required minlength="6" maxlength="6">
+                <select class="secondInGrid" name="country" id="country" required>
+                    <option disabled selected value="">-- select an option --</option>
                     <option value="Germany">Germany</option>
                     <option value="Netherlands">Netherlands</option>
                     <option value="Poland">Poland</option>
                     <option value="Romania">Romania</option>
                     <option value="USA">United States</option>
                 </select>
-                <div><p class="error" id="zipcodeError">error</p></div>
-                <div><p class="error" id="countryError">error</p></div>
+                <div>
+                    <p class="error" id="zipcodeError">Zipcode is required, must be 6 characters long, and must consist of four numbers
+                        and two letters.</p>
+                    <p class="noerror">Looks good!</p>
+                </div>
+                <div>
+                    <p class="error" id="countryError">Country is required.</p>
+                    <p class="noerror">Looks good!</p>
+                </div>
             </div>
             
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter Email">
-            <div><p class="error" id="emailError">error</p></div>
+            <input type="email" name="email" id="email" placeholder="Enter Email" required>
+            <div>
+                <p class="error" id="emailError">Email is required, and must be valid.</p>
+                <p class="noerror">Looks good!</p>
+            </div>
 
             <div class="grid">
                 <label for="sex">Sex</label>
                 <label for="Language">Language</label>
-                <select name="sexes" id="sex">
-                    <option disabled selected value="none"> -- select an option --</option>
+                <select class="firstInGrid" name="sexes" id="sex" required>
+                    <option disabled selected value="">-- select an option --</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other/Prefer not to say</option>
                 </select>
-                <select name="language" id="language">
-                    <option disabled selected value="none"> -- select an option --</option>
+                <select class="secondInGrid" name="language" id="language" required>
+                    <option disabled selected value="">-- select an option --</option>
                     <option value="Dutch">Dutch</option>
                     <option value="English">English</option>
                 </select>
-                <div><p class="error" id="sexError">error</p></div>
-                <div><p class="error" id="languageError">error</p></div>
+                <div>
+                    <p class="error" id="sexError">Sex is required.</p>
+                    <p class="noerror">Looks good!</p>
+                </div>
+                <div>
+                    <p class="error" id="languageError">Language is required.</p>
+                    <p class="noerror">Looks good!</p>
+                </div>
             </div>
             <label for="bio">About / Bio</label>
             <Textarea name="bio" id="bio" placeholder="Write something about yourself..."></Textarea>
@@ -89,7 +126,4 @@
             <button type="submit"><b>Register</b></button>
             </form>
 </body>
-
-<script src="register.js"></script>
-
 </html>
