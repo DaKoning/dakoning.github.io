@@ -64,7 +64,7 @@ language.oninput = function() { checkLanguage(); }
 // Check all the important fields of to form
 // and go back to field if input is wrong
 function checkForm() {
-    if (!checkUsername()) scrollToField(uname);
+    if (!checkUsername()) scrollToField(username);
     else if (!checkPassword()) scrollToField(password);
     else if (!checkFname()) scrollToField(fname);
     else if (!checkLname()) scrollToField(lname);
@@ -77,7 +77,7 @@ function checkForm() {
     else if (!checkLanguage()) scrollToField(language);
     else {
         alert(
-            "Username: " + uname.value +
+            "Username: " + username.value +
             "\nPassword: " + password.value +
             "\nName: " + fname.value + " " + lname.value +
             "\nAddress 1: " + document.getElementById("street").value + " " + document.getElementById("number").value +
@@ -118,14 +118,14 @@ function emphasizeField(field) {
 
 // Change css because of error
 function hasError(field, error) {
-    field.style.border = "2px solid red";
+    field.style.borderColor = "red";
     error.style.color = "red";
     error.style.display = "inline-block";
 }
 
 // Change css because field is good
 function noError(field, error) {
-    field.style.border = "2px solid green";
+    field.style.borderColor = "green";
     error.style.color = "green";
     error.style.display = "inline-block";
     error.innerHTML = "Looks good!";
@@ -166,7 +166,7 @@ function checkPassword() {
         return false;
     }
     else if (password.value.length < 14) {
-        password.style.border = "2px solid darkorange"
+        password.style.borderColor = "darkorange"
         passwordError.style.display = "inline-block";
         passwordError.style.color = "darkorange";
         passwordError.innerHTML = "Password length is okay, 14 or more characters would be more secure.";

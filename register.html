@@ -20,7 +20,7 @@
         <div class="imagecontainer">
             <img src="images/signin.png" alt="Sign In Image" class="image">
         </div>
-        <form name="registerform" class="signincontainer" onsubmit="return checkForm()">
+        <form name="registerform" class="signincontainer" autocomplete onsubmit="return checkForm()">
             <h1>Register</h1>
             <label for="uname">Username</label>
             <input type="text" name="uname" id="uname" placeholder="Enter Username">
@@ -70,13 +70,13 @@
                 <label for="sex">Sex</label>
                 <label for="Language">Language</label>
                 <select name="sexes" id="sex">
-                    <option disabled selected value="none"> -- select an option --</option>
+                    <option disabled selected value="none">-- select an option --</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other/Prefer not to say</option>
                 </select>
                 <select name="language" id="language">
-                    <option disabled selected value="none"> -- select an option --</option>
+                    <option disabled selected value="none">-- select an option --</option>
                     <option value="Dutch">Dutch</option>
                     <option value="English">English</option>
                 </select>
