@@ -39,11 +39,6 @@ input[type=text], input[type=email], input[type=number], input[type=password], s
     box-sizing: border-box;
 }
 
-label {
-    font-size: x-large;
-    display: inline-block;
-}
-
 .error {
     flex: 0 0 100%;
     width: 100%;
@@ -51,6 +46,63 @@ label {
     float: left;
     color: red;
     display: none;
+}
+
+.noerror {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: -20px;
+    float: left;
+    color: green;
+    display: none;
+}
+
+input:invalid {
+    border-color: red;
+    color: red;
+}
+
+input:valid, select:valid {
+    border-color: green;
+    color: green;
+}
+
+input:placeholder-shown {
+    border-color: grey;
+    color: black;
+}
+
+input:not([class=firstInGrid]):not([class=secondInGrid]):invalid + div>p:first-of-type, input[class=firstInGrid]:invalid ~ div:first-of-type>p:first-of-type {
+    color: red;
+    display: inline-block;
+}
+
+input:not([class=firstInGrid]):not([class=secondInGrid]):valid + div>p:nth-of-type(2), input[class=firstInGrid]:valid ~ div:first-of-type>p:nth-of-type(2), select[class=firstInGrid]:valid ~ div:first-of-type>p:nth-of-type(2) {
+    color: green;
+    display: inline-block;
+}
+
+input:not([class=firstInGrid]):not([class=secondInGrid]):placeholder-shown + div>p:first-of-type, input[class=firstInGrid]:placeholder-shown ~ div:first-of-type>p:first-of-type {
+    display: none;
+}
+
+input[class=secondInGrid]:invalid ~ div:nth-of-type(2)>p:first-of-type {
+    color: red;
+    display: inline-block;
+}
+
+input[class=secondInGrid]:valid ~ div:nth-of-type(2)>p:nth-of-type(2), select[class=secondInGrid]:valid ~ div:nth-of-type(2)>p:nth-of-type(2) {
+    color: green;
+    display: inline-block;
+}
+
+input[class=secondInGrid]:placeholder-shown ~ div:nth-of-type(2)>p:first-of-type {
+    display: none;
+}
+
+label {
+    font-size: x-large;
+    display: inline-block;
 }
 
 .buttoncontainer {
