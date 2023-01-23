@@ -23,18 +23,18 @@
         <form name="registerform" class="signincontainer" action="/profile.html" onsubmit="return checkForm()">
             <h1>Register</h1>
             <label for="uname">Username</label>
-            <input type="text" name="uname" id="uname" placeholder="Enter Username" required>
+            <input type="text" name="uname" id="uname" placeholder="Enter Username">
             <p class="error" id="unameError">error</p>
             
             <label for="psw">Password</label>
-            <input type="password" name="psw" id="psw" placeholder="Enter Password" required>
+            <input type="password" name="psw" id="psw" placeholder="Enter Password">
             <div><p class="error" id="passwordError">error</p></div>
 
             <div class="grid">
                 <label for="fname">First Name</label>
                 <label for="lname">Last Name</label>
-                <input type="text" name="fname" id="fname" placeholder="John" required>
-                <input type="text" name="lname" id="lname" placeholder="Doe" required>
+                <input type="text" name="fname" id="fname" placeholder="John">
+                <input type="text" name="lname" id="lname" placeholder="Doe">
                 <p class="error" id="fnameError">error</p>
                 <p class="error" id="lnameError">error</p>
             </div>
@@ -49,7 +49,7 @@
                 <label for="zipcode">Zip Code</label>
                 <label for="country">Country</label>
                 <input type="text" name="zipcode" id="zipcode" placeholder="123456">
-                <select name="country" required>
+                <select name="country">
                     <option disabled selected>-- select an option --</option>
                     <option value="germany">Germany</option>
                     <option value="netherlands">Netherlands</option>
@@ -61,19 +61,19 @@
             </div>
             
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter Email" required>
+            <input type="email" name="email" id="email" placeholder="Enter Email">
             <p class="error" id="emailError">error</p>
 
             <div class="grid">
                 <label for="sex">Sex</label>
                 <label for="Language">Language</label>
-                <select name="sexes" required>
+                <select name="sexes">
                     <option disabled selected> -- select an option --</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="else">Different/Prefer not to say</option>
                 </select>
-                <select name="language" required>
+                <select name="language">
                     <option disabled selected> -- select an option --</option>
                     <option value="dutch">Dutch</option>
                     <option value="english">English</option>

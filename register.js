@@ -45,7 +45,9 @@ function checkForm() {
     else if (!checkLname()) scrollToField(lname);
     else if (!checkZipcode()) scrollToField(zipcode);
     else if (!checkEmail()) scrollToField(email);
-    else return true;
+    else {
+        return true;
+    }
     return false;
 }
 
@@ -56,8 +58,10 @@ function scrollToField(field) {
     let fieldOffset = field.getBoundingClientRect().top;
     let extraOffset = 100;
     let offset = fieldOffset + window.pageYOffset - extraOffset;
-    window.scrollTo({ top: offset, behavior: "smooth" })
-    field.selectionStart = field.selectionEnd = field.value.length;
+    window.scrollTo({ top: offset, behavior: "smooth" });
+    if (field && field.value) {
+        field.selectionStart = field.selectionEnd = field.value.length;
+    }
     field.focus({preventScroll: true});
     emphasizeField(field);
 }
@@ -131,13 +135,6 @@ function checkPassword() {
         noError(password, passwordError);
         return true;
     }
-}
-
-function noPasswordError() {
-    passwordError.style.color = "green";
-    passwordError.style.display = "inline-block";
-    password.style.border = "2px solid green";
-    passwordError.innerHTML = "Looks good!";
 }
 
 function checkName(name) {
