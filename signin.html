@@ -20,13 +20,15 @@
         <div class="imagecontainer">
             <img src="images/signin.png" alt="Sign In Image" class="image">
         </div>
-        <form class="signincontainer" action="/profile.html" onsubmit="return formValidation()" method="post">
+        <form class="signincontainer" id="signinform" action="/profile.html" onsubmit="return checkForm()" method="post">
             <h1>Sign In</h1>
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Enter Email" required>
+            <input type="email" name="email" id="email" placeholder="Enter Email">
+            <div><p class="error" id="emailError">error</p></div>
 
             <label for="psw">Password</label>
-            <input type="password" name="psw" placeholder="Enter Password" required>
+            <input type="password" name="psw" id="password" placeholder="Enter Password">
+            <div><p class="error" id="passwordError">error</p></div>
 
             <button type="submit"><b>Sign In</b></button>
 

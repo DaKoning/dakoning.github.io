@@ -4,15 +4,25 @@ let username = form["uname"];
 let password = form["psw"];
 let fname = form["fname"];
 let lname = form["lname"];
+let street = form["street"];
+let number = form["number"];
 let zipcode = form["zipcode"];
+let country = form["country"];
 let email = form["email"];
+let sex = form["sex"];
+let language = form["language"];
 
 let unameError = document.getElementById("unameError");
 let passwordError = document.getElementById("passwordError");
 let fnameError = document.getElementById("fnameError");
 let lnameError = document.getElementById("lnameError");
+let streetError = document.getElementById("streetError");
+let numberError = document.getElementById("numberError");
 let zipcodeError = document.getElementById("zipcodeError");
+let countryError = document.getElementById("countryError");
 let emailError = document.getElementById("emailError");
+let sexError = document.getElementById("sexError");
+let languageError = document.getElementById("languageError");
 
 // Check for all important fields whether they are correct
 // upon page load (and there's already something filled in)
@@ -30,11 +40,26 @@ fname.onkeyup = function() { checkFname(); }
 if (lname.value.length != 0) checkLname();
 lname.onkeyup = function() { checkLname(); }
 
+if (street.value.length != 0) checkStreet();
+street.onkeyup = function() { checkStreet(); }
+
+if (number.value.length != 0) checkNumber();
+number.onkeyup = function() { checkNumber(); }
+
 if (zipcode.value.length != 0) checkZipcode();
 zipcode.onkeyup = function() { checkZipcode(); }
 
+if (country.value != "none")   checkCountry();
+country.oninput = function() { checkCountry(); }
+
 if (email.value.length != 0) checkEmail();
 email.onkeyup = function() { checkEmail(); }
+
+if (sex.value != "none")   checkSex();
+sex.oninput = function() { checkSex(); }
+
+if (language.value != "none")   checkLanguage();
+language.oninput = function() { checkLanguage(); }
 
 // Check all the important fields of to form
 // and go back to field if input is wrong
@@ -43,9 +68,25 @@ function checkForm() {
     else if (!checkPassword()) scrollToField(password);
     else if (!checkFname()) scrollToField(fname);
     else if (!checkLname()) scrollToField(lname);
+    else if (!checkStreet()) scrollToField(street);
+    else if (!checkNumber()) scrollToField(number);
     else if (!checkZipcode()) scrollToField(zipcode);
+    else if (!checkCountry()) scrollToField(country);
     else if (!checkEmail()) scrollToField(email);
+    else if (!checkSex()) scrollToField(sex);
+    else if (!checkLanguage()) scrollToField(language);
     else {
+        alert(
+            "Username: " + uname.value +
+            "\nPassword: " + password.value +
+            "\nName: " + fname.value + " " + lname.value +
+            "\nAddress 1: " + document.getElementById("street").value + " " + document.getElementById("number").value +
+            "\nAddress 2: " + zipcode.value + ", " + document.getElementById("country").value +
+            "\nEmail: " + email.value +
+            "\nSex: " + sex.value +
+            "\nLanguage: " + language.value +
+            "\nAbout / Bio: " + document.getElementById("bio").value
+        )
         return true;
     }
     return false;
@@ -138,7 +179,7 @@ function checkPassword() {
 }
 
 function checkName(name) {
-    if (/\d/.test(name) || /\W/.test(name)) return false;
+    if (/[^A-Za-z\s]/.test(name)) return false;
     return true;
 }
 
@@ -176,6 +217,30 @@ function checkLname() {
     }
 }
 
+function checkStreet() {
+    if (/[^A-Za-z]/.test(street.value)) {
+        hasError(street, streetError);
+        streetError.innerHTML = "Street can only contain letters from the alphabet.";
+        return false;
+    }
+    else {
+        noError(street, streetError);
+        return true;
+    }
+}
+
+function checkNumber() {
+    if (/\D/.test(number.value)) {
+        hasError(number, numberError);
+        numberError.innerHTML = "House number must be a number.";
+        return false;
+    }
+    else {
+        noError(number, numberError);
+        return true;
+    }
+}
+
 function checkZipcode() {
     if (!(/\d\d\d\d[a-z][a-z]/i.test(zipcode.value)) || zipcode.value.length != 6) {
         hasError(zipcode, zipcodeError);
@@ -188,6 +253,19 @@ function checkZipcode() {
     }
 }
 
+function checkCountry() {
+    console.log("checking country");
+    if (country.value == "none") {
+        hasError(country, countryError);
+        countryError.innerHTML = "Country is required.";
+        return false;
+    }
+    else {
+        noError(country, countryError);
+        return true;
+    }
+}
+
 function checkEmail() {
     if (!(/\w+@\w+\.\w{2,}/.test(email.value))) {
         hasError(email, emailError);
@@ -196,6 +274,30 @@ function checkEmail() {
     }
     else {
         noError(email, emailError);
+        return true;
+    }
+}
+
+function checkSex() {
+    if (sex.value == "none") {
+        hasError(sex, sexError);
+        sexError.innerHTML = "Sex is required.";
+        return false;
+    }
+    else {
+        noError(sex, sexError);
+        return true;
+    }
+}
+
+function checkLanguage() {
+    if (language.value == "none") {
+        hasError(language, languageError);
+        languageError.innerHTML = "Language is required.";
+        return false;
+    }
+    else {
+        noError(language, languageError);
         return true;
     }
 }

@@ -20,11 +20,11 @@
         <div class="imagecontainer">
             <img src="images/signin.png" alt="Sign In Image" class="image">
         </div>
-        <form name="registerform" class="signincontainer" action="/profile.html" onsubmit="return checkForm()">
+        <form name="registerform" class="signincontainer" onsubmit="return checkForm()">
             <h1>Register</h1>
             <label for="uname">Username</label>
             <input type="text" name="uname" id="uname" placeholder="Enter Username">
-            <p class="error" id="unameError">error</p>
+            <div><p class="error" id="unameError">error</p></div>
             
             <label for="psw">Password</label>
             <input type="password" name="psw" id="psw" placeholder="Enter Password">
@@ -35,52 +35,56 @@
                 <label for="lname">Last Name</label>
                 <input type="text" name="fname" id="fname" placeholder="John">
                 <input type="text" name="lname" id="lname" placeholder="Doe">
-                <p class="error" id="fnameError">error</p>
-                <p class="error" id="lnameError">error</p>
+                <div><p class="error" id="fnameError">error</p></div>
+                <div><p class="error" id="lnameError">error</p></div>
             </div>
             <div class="grid grid2">
                 <label for="fname">Street</label>
                 <label for="lname">House no.</label>
-                <input type="text" name="street" placeholder="Street">
-                <input class="houseno" type="number" name="number" placeholder="10">
-
+                <input type="text" name="street" id="street" placeholder="Street">
+                <input class="houseno" type="text" name="number" id="number" placeholder="10">
+                <div><p class="error" id="streetError">error</p></div>
+                <div><p class="error" id="numberError">error</p></div>
             </div>
             <div class="grid grid3">
                 <label for="zipcode">Zip Code</label>
                 <label for="country">Country</label>
                 <input type="text" name="zipcode" id="zipcode" placeholder="123456">
-                <select name="country">
-                    <option disabled selected>-- select an option --</option>
-                    <option value="germany">Germany</option>
-                    <option value="netherlands">Netherlands</option>
-                    <option value="poland">Poland</option>
-                    <option value="romania">Romania</option>
-                    <option value="us">United States</option>
+                <select name="country" id="country">
+                    <option disabled selected value="none">-- select an option --</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Romania">Romania</option>
+                    <option value="USA">United States</option>
                 </select>
-                <p class="error" id="zipcodeError">error</p>
+                <div><p class="error" id="zipcodeError">error</p></div>
+                <div><p class="error" id="countryError">error</p></div>
             </div>
             
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Enter Email">
-            <p class="error" id="emailError">error</p>
+            <div><p class="error" id="emailError">error</p></div>
 
             <div class="grid">
                 <label for="sex">Sex</label>
                 <label for="Language">Language</label>
-                <select name="sexes">
-                    <option disabled selected> -- select an option --</option>
+                <select name="sexes" id="sex">
+                    <option disabled selected value="none"> -- select an option --</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <option value="else">Different/Prefer not to say</option>
+                    <option value="other">Other/Prefer not to say</option>
                 </select>
-                <select name="language">
-                    <option disabled selected> -- select an option --</option>
-                    <option value="dutch">Dutch</option>
-                    <option value="english">English</option>
+                <select name="language" id="language">
+                    <option disabled selected value="none"> -- select an option --</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="English">English</option>
                 </select>
+                <div><p class="error" id="sexError">error</p></div>
+                <div><p class="error" id="languageError">error</p></div>
             </div>
             <label for="bio">About / Bio</label>
-            <Textarea name="bio" placeholder="Write something about yourself..."></Textarea>
+            <Textarea name="bio" id="bio" placeholder="Write something about yourself..."></Textarea>
 
             <button type="submit"><b>Register</b></button>
             </form>
