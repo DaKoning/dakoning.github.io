@@ -90,7 +90,7 @@
             </div>
             
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" placeholder="Enter Email" pattern="\w+@\w+\.\w{2,}" required>
+            <input type="text" name="email" id="email" placeholder="Enter Email" pattern="[A-Za-z0-9._+-]+@[A-Za-z-]+\.[A-Za-z0-9.-]{2,}" required>
             <div>
                 <p class="error" id="emailError">Email is required, and must be valid.</p>
                 <p class="noerror">Looks good!</p>
