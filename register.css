@@ -100,3 +100,8 @@ hr.divider {
 }
 .grid2 { grid-template-columns: auto 16%; }
 .grid3, .grid4 { grid-template-columns: 20% auto; }
+
+.behavioral_tracking {
+    display: flex;
+    flex-direction: column;
+}

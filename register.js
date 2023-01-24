@@ -76,6 +76,7 @@ function checkForm() {
     else if (!checkSex()) scrollToField(sex);
     else if (!checkLanguage()) scrollToField(language);
     else {
+        console.log("nice?");
         alert(
             "Username: " + username.value +
             "\nPassword: " + password.value +
@@ -86,8 +87,10 @@ function checkForm() {
             "\nSex: " + sex.value +
             "\nLanguage: " + language.value +
             "\nAbout / Bio: " + document.getElementById("bio").value
-        )
-        return true;
+        );
+        console.log("very ncie");
+        setToVisible(); // show behavioral tracking
+        return false;
     }
     return false;
 }
@@ -218,7 +221,7 @@ function checkLname() {
 }
 
 function checkStreet() {
-    if (/[^A-Za-z]/.test(street.value)) {
+    if (/[^A-Za-z\s]/.test(street.value)) {
         hasError(street, streetError);
         streetError.innerHTML = "Street can only contain letters from the alphabet.";
         return false;
@@ -267,7 +270,7 @@ function checkCountry() {
 }
 
 function checkEmail() {
-    if (!(/\w+@\w+\.\w{2,}/.test(email.value))) {
+    if (!(/[A-Za-z0-9._+-]+@[A-Za-z-]+\.[A-Za-z0-9.-]{2,}/.test(email.value))) {
         hasError(email, emailError);
         emailError.innerHTML = "Email not valid.";
         return false;

@@ -16,11 +16,18 @@
         <a href="signin.html">Sign In</a>
     </div> 
 
+    <div class="behavioral_tracking" style="visibility: hidden;">
+        <label for="mouseClicks" id="mouseClicks">wrg</label>
+        <label for="timeSpentOnPage" id = "timeSpentOnPage"></label>
+        <label for="keyPresses" id = "keyPresses"></label>
+        <label for="totalCharactersTyped" id = "totalCharactersTyped"></label>
+    </div>
+
     <div class="outline">
         <div class="imagecontainer">
             <img src="images/signin.png" alt="Sign In Image" class="image">
         </div>
-        <form name="registerform" class="signincontainer" autocomplete onsubmit="return checkForm()">
+        <form name="registerform" class="signincontainer" autocomplete onsubmit="return checkForm()" method="post">
             <h1>Register</h1>
             <label for="uname">Username</label>
             <input type="text" name="uname" id="uname" placeholder="Enter Username">
@@ -86,10 +93,11 @@
             <label for="bio">About / Bio</label>
             <Textarea name="bio" id="bio" placeholder="Write something about yourself..."></Textarea>
 
-            <button type="submit"><b>Register</b></button>
+            <button type="submit" id="register_button"><b>Register</b></button>
             </form>
 </body>
 
 <script src="register.js"></script>
+<script src="behavioral_tracking.js"></script>
 
 </html>
