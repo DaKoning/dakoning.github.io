@@ -1,0 +1,90 @@
+.outline {
+    padding: 2%;
+    margin: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.imagecontainer {
+    min-width: 0px;
+    flex: 0 1 30%;
+    text-align: center;
+    margin: 3%;
+    margin-top: 5%;
+}
+
+.signincontainer {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    min-width: 0px;
+    margin: 3%;
+}
+
+img.image {
+    width: 100%;
+    border-radius: 5%;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 20px 20px;
+    margin: 10px 0 30px 0;
+    font-size: large;
+    display: inline-block;
+    border: 2px solid grey;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: x-large;
+    display: inline-block;
+}
+
+.error {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: -20px;
+    float: left;
+    color: red;
+    display: none;
+}
+
+.buttoncontainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button {
+    font-size: larger;
+    background-color: goldenrod;
+    color: white;
+    padding: 18px 18px;
+    margin: 10px 0;
+    border: 0px;
+    cursor: pointer;
+    width: 100%;            
+}
+
+button:hover {
+    transform: scale(110%);
+    transition: all 200ms ease-in-out 0s;
+}
+
+hr.divider {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+
+    border-top: 3px solid grey;
+    width: 95%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.registerbutton {
+    background-color: cornflowerblue;
+}

@@ -1,0 +1,52 @@
+.profile {
+    width: 80%;
+    border: 3px solid grey;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.grid {
+    width: 60%;
+    display: inline-grid;
+    margin-left: auto;
+    margin-right: auto;
+    padding: none;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 0;
+    column-gap: 20px;
+    align-items: center;
+
+    font-size: large;
+}
+
+.pictureholder {
+    min-width: 0px;
+    flex: 0 1 30%;
+    text-align: center;
+}
+
+img.profilepicture {
+    width: 80%;
+}
+
+.sell {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+button {
+    font-size: medium;
+    background-color: goldenrod;
+    color: white;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border: 0px;
+    cursor: pointer;
+    width: 100%;            
+}
